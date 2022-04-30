@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState, } from 'react';
-import './App.css';
+import './styles/sass/App.scss';
 import DisplayType from './components/DisplayType';
 import DoubleDamageFrom from './components/DoubleDamageFrom';
 import DoubleDamageTo from './components/DoubleDamageTo';
