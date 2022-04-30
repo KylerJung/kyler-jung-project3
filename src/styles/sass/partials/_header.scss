@@ -1,0 +1,61 @@
+h1 {
+  padding-top: 50px;
+  margin-top: 0;
+}
+
+h2 {
+  padding-bottom: 25px;
+}
+
+form {
+  padding: 25px;
+
+  select {
+    margin-right: 10px;
+    text-align: center;
+    
+  }
+
+  button {
+    margin-left: 10px;
+  }
+
+  select,
+  button {
+    border: none;
+    width: 200px;
+    padding: 5px 0;
+    border-radius: 5px;
+  }
+}
+
+section {
+  border-radius: 10px;
+
+
+  div {
+    // width: 50%;
+  }
+}
+
+.resultsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  section {
+    width: 45%;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    // this is an issue (leaves empty blocks when no info)
+  }
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+
+

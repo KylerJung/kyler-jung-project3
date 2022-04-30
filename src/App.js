@@ -9,6 +9,8 @@ import HalfDamageTo from './components/HalfDamageTo';
 import NoDamageFrom from './components/NoDamageFrom';
 import NoDamageTo from './components/NoDamageTo';
 import PokeForm from './components/PokeForm';
+import Moves from './components/Moves';
+import Pokemon from './components/Pokemon';
 
 function App() {
 
@@ -20,20 +22,23 @@ function App() {
   const [allNoDmgFrom, setAllNoDmgFrom] = useState([])
 
   const [userSelection, setUserSelection] = useState([])
+  const [moveType, setMoveType] = useState([])
+  const [pokemonType, setPokemonType] = useState([])
 
   useEffect(() => {
     axios({
       url: `https://pokeapi.co/api/v2/type/${userSelection}/`,
       method: "GET",
       dataResponse: "json",
+      params: {
+        limit: 10
+      }
     }).then(response => {
       // console.log(response)
 
-      // const testResponse = response.data.results
-      // console.log(testResponse)
 
       const responseData = response.data.damage_relations
-      console.log(responseData)
+      // console.log(responseData)
 
       // different states for each array
       setAllDoubleDmgTo(response.data.damage_relations.double_damage_to)
@@ -44,6 +49,11 @@ function App() {
       setAllHalfDmgFrom(response.data.damage_relations.half_damage_from)
       setAllNoDmgFrom(response.data.damage_relations.no_damage_from)
 
+      // state for pokemon moves of said type
+      setMoveType(response.data.moves)
+      // state for pokemon of said type
+      setPokemonType(response.data.pokemon)
+      
     })
   }, [userSelection])
 
@@ -58,15 +68,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Test Div</h1>
+      <h1>Pokemon Type Battle Properties</h1>
+
       <PokeForm getTypes={getTypes}/>
       <DisplayType userSelection={userSelection}/>
-      <DoubleDamageTo allDoubleDmgTo={allDoubleDmgTo}/>
-      <HalfDamageTo allHalfDmgTo={allHalfDmgTo}/>
-      <NoDamageTo allNoDmgTo={allNoDmgTo}/>
-      <DoubleDamageFrom allDoubleDmgFrom={allDoubleDmgFrom}/>
-      <HalfDamageFrom allHalfDmgFrom={allHalfDmgFrom}/>
-      <NoDamageFrom allNoDmgFrom={allNoDmgFrom}/>
+      <div className="resultsContainer">
+        <DoubleDamageTo allDoubleDmgTo={allDoubleDmgTo} userSelection={userSelection}/>
+        <HalfDamageTo allHalfDmgTo={allHalfDmgTo} userSelection={userSelection}/>
+        <NoDamageTo allNoDmgTo={allNoDmgTo} userSelection={userSelection}/>
+        <DoubleDamageFrom allDoubleDmgFrom={allDoubleDmgFrom} userSelection={userSelection}/>
+        <HalfDamageFrom allHalfDmgFrom={allHalfDmgFrom} userSelection={userSelection}/>
+        <NoDamageFrom allNoDmgFrom={allNoDmgFrom} userSelection={userSelection}/>
+      </div>
+      <Pokemon pokemonType={pokemonType} userSelection={userSelection}/>
+      <Moves moveType={moveType} userSelection={userSelection}/>
+      
     </div>
   );
 }

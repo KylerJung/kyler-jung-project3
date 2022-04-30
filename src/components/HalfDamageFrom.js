@@ -1,11 +1,12 @@
-const HalfDamageFrom = ({ allHalfDmgFrom }) => {
+const HalfDamageFrom = ({ allHalfDmgFrom, userSelection }) => {
   return (
-    <section>
+    <section className={userSelection}>
 
       {allHalfDmgFrom.length === 0 ? (<p></p>)
         :
         <>
           <h3>half damage from:</h3>
+          <div className="infoContainer">
           {
             allHalfDmgFrom.map(type => {
               return (
@@ -15,6 +16,7 @@ const HalfDamageFrom = ({ allHalfDmgFrom }) => {
               )
             })
           }
+          </div>
         </>
       }
     </section>

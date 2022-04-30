@@ -1,11 +1,13 @@
-const DoubleDamageFrom = ({ allDoubleDmgFrom }) => {
+const DoubleDamageFrom = ({ allDoubleDmgFrom, userSelection }) => {
   return (
-    <section>
+    <section className={userSelection}>
 
       {allDoubleDmgFrom.length === 0 ? (<p></p>)
         :
         <>
-        <h3>double damage from:</h3>
+          
+          <h3>double damage from:</h3>
+          <div className="infoContainer">
           {
             allDoubleDmgFrom.map(type => {
               return (
@@ -15,6 +17,7 @@ const DoubleDamageFrom = ({ allDoubleDmgFrom }) => {
               )
             })
           }
+          </div>
         </>
       }
     </section>

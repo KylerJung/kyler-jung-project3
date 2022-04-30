@@ -15,7 +15,7 @@ import { useState } from "react";
       <>
         <form onSubmit={(e) => props.getTypes(e, userChoice)}>
           <select onChange={handleChoice} value={userChoice} id="pokemonType" name="pokemonType">
-            <option value="blank" disabled>Choose a type!</option>
+            <option value="blank" className="placeholder" disabled>Choose a type!</option>
             <option value="normal">Normal</option>
             <option value="fighting">Fighting</option>
             <option value="flying">Flying</option>

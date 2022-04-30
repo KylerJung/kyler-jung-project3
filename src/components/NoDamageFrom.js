@@ -1,11 +1,11 @@
-const NoDamageFrom = ({ allNoDmgFrom }) => {
+const NoDamageFrom = ({ allNoDmgFrom, userSelection }) => {
   return (
-    <section>
-
+    <section className={userSelection}>
       {allNoDmgFrom.length === 0 ? (<p></p>)
         :
         <>
           <h3>no damage from:</h3>
+          <div className="infoContainer">
           {
             allNoDmgFrom.map(type => {
               return (
@@ -15,6 +15,7 @@ const NoDamageFrom = ({ allNoDmgFrom }) => {
               )
             })
           }
+          </div>
         </>
       }
     </section>
