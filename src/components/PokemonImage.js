@@ -27,7 +27,7 @@ const PokemonImage = ({pokemonType}) => {
     <div className="imgContainer" >
       {pokemonType.length === 0 ? (<></>) 
       : 
-      (<img src={pokeImg} alt={`photo of ${pokeNameArray[0]}`}></img>)
+      (<img src={pokeImg} alt={`${pokeNameArray[0]}`}></img>)
       }
     </div> 
   )
