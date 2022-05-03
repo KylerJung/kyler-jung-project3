@@ -1,7 +1,6 @@
 const HalfDamageFrom = ({ allHalfDmgFrom, userSelection }) => {
   return (
     <section className={userSelection}>
-
       {allHalfDmgFrom.length === 0 ? (<></>)
         :
         <>
@@ -10,7 +9,7 @@ const HalfDamageFrom = ({ allHalfDmgFrom, userSelection }) => {
           {
             allHalfDmgFrom.map(type => {
               return (
-                <div key={type.url}>
+                <div key={type.url} className="typeContainer">
                   <p>{type.name}</p>
                 </div>
               )

@@ -1,9 +1,9 @@
 header {
-  height: 100vh;
+  height: 110vh
 }
 
 h1 {
-  padding-top: 50px;
+  padding-top: 25px;
   margin-top: 0;
   font-size: 3rem;
   
@@ -16,10 +16,19 @@ h1 {
 h2 {
   padding: 25px;
   text-transform: capitalize;
+  font-size: 1.5rem;
+  margin: 0;
 }
 
+h3 {
+  font-size: 1rem;
+  margin: 0;
+  padding: 20px;
+}
+
+
 form {
-  padding: 50px;
+  padding: 25px;
 
   select {
     margin-right: 10px;
@@ -81,8 +90,20 @@ select,
 option,
 h2,
 button,
-h1 {
+h1,
+h3 {
   font-family: "Chakra Petch", sans-serif;
+}
+
+p {
+  font-family: "DM Sans", sans-serif;
+}
+
+.typeContainer {
+  p {
+    padding: 0 10px;
+    margin: 10px 0;
+  }
 }
 
 

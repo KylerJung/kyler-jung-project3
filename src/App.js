@@ -12,6 +12,8 @@ import PokeForm from './components/PokeForm';
 import Moves from './components/Moves';
 import Pokemon from './components/Pokemon';
 import Title from './components/Title';
+import PokemonImage from './components/PokemonImage';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -32,11 +34,6 @@ function App() {
       method: "GET",
       dataResponse: "json",
     }).then(response => {
-      // console.log(response)
-
-
-      const responseData = response.data.damage_relations
-      // console.log(responseData)
 
       // different states for each array
       setAllDoubleDmgTo(response.data.damage_relations.double_damage_to)
@@ -55,44 +52,46 @@ function App() {
     })
   }, [userSelection])
 
-  const getTypes = (event, type) => {
+  const getTypes = (event, submit) => {
     event.preventDefault();
-    // console.log(type)
-    
-    setUserSelection(type)
+    setUserSelection(submit)
   }
-  // console.log(userSelection)
-
-  
-
-
 
   return (
     <div className="App">
-      <header>
-        <Title />
-        <PokeForm getTypes={getTypes}/>
-        <DisplayType userSelection={userSelection}/>
+      <div className='wrapper'>
+        <header>
+          <Title />
+          <PokeForm getTypes={getTypes} userSelection={userSelection}/>
+          <DisplayType userSelection={userSelection}/>
 
 
-        <div className="resultsContainer">
-          <div className='toContainer'>
-            <DoubleDamageTo allDoubleDmgTo={allDoubleDmgTo} userSelection={userSelection}/>
-            <HalfDamageTo allHalfDmgTo={allHalfDmgTo} userSelection={userSelection}/>
-            <NoDamageTo allNoDmgTo={allNoDmgTo} userSelection={userSelection}/>
+          <div className="resultsContainer">
+            <div className='toContainer'>
+              <DoubleDamageTo allDoubleDmgTo={allDoubleDmgTo} userSelection={userSelection}/>
+              <HalfDamageTo allHalfDmgTo={allHalfDmgTo} userSelection={userSelection}/>
+              <NoDamageTo allNoDmgTo={allNoDmgTo} userSelection={userSelection}/>
+            </div>
+            <div className='fromContainer'>
+              <DoubleDamageFrom allDoubleDmgFrom={allDoubleDmgFrom} userSelection={userSelection}/>
+              <HalfDamageFrom allHalfDmgFrom={allHalfDmgFrom} userSelection={userSelection}/>
+              <NoDamageFrom allNoDmgFrom={allNoDmgFrom} userSelection={userSelection}/>
+            </div>
           </div>
-          <div className='fromContainer'>
-            <DoubleDamageFrom allDoubleDmgFrom={allDoubleDmgFrom} userSelection={userSelection}/>
-            <HalfDamageFrom allHalfDmgFrom={allHalfDmgFrom} userSelection={userSelection}/>
-            <NoDamageFrom allNoDmgFrom={allNoDmgFrom} userSelection={userSelection}/>
+        </header>
+        <div className="extraInfoContainer">
+          <div className='flexContainer'>
+            <div className='pokeContainer'>
+        <Pokemon pokemonType={pokemonType} userSelection={userSelection}/>
+            </div>
+            <div className='pokeContainer'>
+        <PokemonImage pokemonType={pokemonType}/>
+            </div>
           </div>
+        <Moves moveType={moveType} userSelection={userSelection}/>
         </div>
-      </header>
-      <div className="extraInfoContainer">
-      <Pokemon pokemonType={pokemonType} userSelection={userSelection}/>
-      <Moves moveType={moveType} userSelection={userSelection}/>
       </div>
-      
+      <Footer userSelection={userSelection}/>
     </div>
   );
 }

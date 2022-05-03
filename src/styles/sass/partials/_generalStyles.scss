@@ -2,7 +2,7 @@ body {
   background-color: linen;
 }
 
-.App {
+.wrapper {
   text-align: center;
   max-width: 1280px;
   width: 85%;
@@ -11,7 +11,7 @@ body {
 
 .moveContainer {
   p {
-    padding: 0 25px;
+    padding: 0 10px;
   }
 }
 
@@ -30,6 +30,25 @@ body {
     p {
       text-transform: capitalize;
     }
-
   }
+}
+
+footer {
+  margin-top: 25px;
+  padding: 25px 0;
+
+  a {
+    color: black;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+button:hover,
+button:focus {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
 }

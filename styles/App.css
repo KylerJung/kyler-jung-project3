@@ -216,7 +216,7 @@ body {
   background-color: linen;
 }
 
-.App {
+.wrapper {
   text-align: center;
   max-width: 1280px;
   width: 85%;
@@ -224,7 +224,7 @@ body {
 }
 
 .moveContainer p {
-  padding: 0 25px;
+  padding: 0 10px;
 }
 
 .extraInfoContainer {
@@ -251,12 +251,31 @@ body {
   text-transform: capitalize;
 }
 
+footer {
+  margin-top: 25px;
+  padding: 25px 0;
+}
+footer a {
+  color: black;
+}
+footer p {
+  margin: 0;
+}
+
+button:hover,
+button:focus {
+  background-color: white;
+  color: black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 header {
-  height: 100vh;
+  height: 110vh;
 }
 
 h1 {
-  padding-top: 50px;
+  padding-top: 25px;
   margin-top: 0;
   font-size: 3rem;
 }
@@ -268,10 +287,18 @@ h1 img {
 h2 {
   padding: 25px;
   text-transform: capitalize;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+h3 {
+  font-size: 1rem;
+  margin: 0;
+  padding: 20px;
 }
 
 form {
-  padding: 50px;
+  padding: 25px;
 }
 form select {
   margin-right: 10px;
@@ -343,8 +370,18 @@ select,
 option,
 h2,
 button,
-h1 {
+h1,
+h3 {
   font-family: "Chakra Petch", sans-serif;
+}
+
+p {
+  font-family: "DM Sans", sans-serif;
+}
+
+.typeContainer p {
+  padding: 0 10px;
+  margin: 10px 0;
 }
 
 .normal {
@@ -443,13 +480,123 @@ h1 {
 
 .fighting h3,
 .fighting p,
+.fighting a,
 .poison h3,
 .poison p,
+.poison a,
 .ghost h3,
 .ghost p,
+.ghost a,
 .dragon h3,
 .dragon p,
+.dragon a,
 .dark h3,
-.dark p {
+.dark p,
+.dark a {
   color: white;
+}
+
+.imgContainer {
+  width: 85%;
+  margin: 0 auto;
+}
+.imgContainer img {
+  width: 100%;
+}
+
+#pokemonSection {
+  width: 85%;
+  margin: 0 auto;
+}
+
+.flexContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 50px;
+}
+
+.pokeContainer {
+  width: 50%;
+}
+
+@media (max-width: 800px) {
+  form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  form select {
+    margin-right: 0;
+  }
+  form button {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+@media (max-width: 600px) {
+  .resultsContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .resultsContainer .toContainer,
+.resultsContainer .fromContainer {
+    width: 100%;
+  }
+
+  .flexContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+  .flexContainer .pokeContainer {
+    width: 100%;
+  }
+
+  #moveWrap {
+    width: 85%;
+  }
+}
+@media (max-width: 450px) {
+  .resultsContainer section {
+    width: 100%;
+  }
+
+  .pokeContainer #pokemonSection,
+.pokeContainer .imgContainer {
+    width: 100%;
+  }
+
+  #moveWrap {
+    width: 100%;
+  }
+}
+@media (max-width: 370px) {
+  h1 img {
+    width: 250px;
+  }
+
+  form select,
+form button {
+    width: 250px;
+  }
 }

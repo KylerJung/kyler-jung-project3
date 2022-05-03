@@ -1,7 +1,6 @@
 const NoDamageTo = ({ allNoDmgTo, userSelection }) => {
   return (
     <section className={userSelection}>
-
       {allNoDmgTo.length === 0 ? (<></>)
         :
         <>
@@ -10,7 +9,7 @@ const NoDamageTo = ({ allNoDmgTo, userSelection }) => {
           {
             allNoDmgTo.map(type => {
               return (
-                <div key={type.url}>
+                <div key={type.url} className="typeContainer">
                   <p>{type.name}</p>
                 </div>
               )

@@ -8,9 +8,6 @@ import { useState } from "react";
     const handleChoice = (change) => {
       setUserChoice(change.target.value)
     }
-
-    
-
     return(
       <>
         <form onSubmit={(e) => props.getTypes(e, userChoice)}>

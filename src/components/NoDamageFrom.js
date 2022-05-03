@@ -9,7 +9,7 @@ const NoDamageFrom = ({ allNoDmgFrom, userSelection }) => {
           {
             allNoDmgFrom.map(type => {
               return (
-                <div key={type.url}>
+                <div key={type.url} className="typeContainer">
                   <p>{type.name}</p>
                 </div>
               )

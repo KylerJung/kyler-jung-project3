@@ -1,10 +1,9 @@
 const Moves = ({ moveType, userSelection }) => {
 
   const slicedMoveType = moveType.slice(0,20)
-
   return (
-    <section className={userSelection}>
-      {moveType.length === 0 ? (<p></p>)
+    <section className={userSelection} id="moveWrap">
+      {moveType.length === 0 ? (<></>)
       :
       <>
       <h3>some moves of this type: </h3>

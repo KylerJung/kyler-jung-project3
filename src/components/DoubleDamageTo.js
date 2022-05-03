@@ -1,8 +1,6 @@
 const DoubleDamageTo = ({ allDoubleDmgTo, userSelection }) => {
   return (
     <section className={userSelection}>
-
-
       {allDoubleDmgTo.length === 0 ? (<></>)
         :
         <>
@@ -11,7 +9,7 @@ const DoubleDamageTo = ({ allDoubleDmgTo, userSelection }) => {
           {
             allDoubleDmgTo.map(type => {
               return (
-                <div key={type.url}>
+                <div key={type.url} className="typeContainer">
                   <p>{type.name}</p>
                 </div>
               )
