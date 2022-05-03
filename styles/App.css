@@ -212,6 +212,10 @@ html {
           box-sizing: inherit;
 }
 
+body {
+  background-color: linen;
+}
+
 .App {
   text-align: center;
   max-width: 1280px;
@@ -219,17 +223,55 @@ html {
   margin: 0 auto;
 }
 
+.moveContainer p {
+  padding: 0 25px;
+}
+
+.extraInfoContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.extraInfoContainer section {
+  border-radius: 10px;
+  margin-bottom: 25px;
+  width: 92.5%;
+  -webkit-box-shadow: 5px 5px black;
+          box-shadow: 5px 5px black;
+}
+.extraInfoContainer section h3,
+.extraInfoContainer section p {
+  text-transform: capitalize;
+}
+
+header {
+  height: 100vh;
+}
+
 h1 {
   padding-top: 50px;
   margin-top: 0;
+  font-size: 3rem;
+}
+h1 img {
+  width: 300px;
+  height: auto;
 }
 
 h2 {
-  padding-bottom: 25px;
+  padding: 25px;
+  text-transform: capitalize;
 }
 
 form {
-  padding: 25px;
+  padding: 50px;
 }
 form select {
   margin-right: 10px;
@@ -241,28 +283,29 @@ form button {
 form select,
 form button {
   border: none;
-  width: 200px;
+  width: 300px;
+  height: 50px;
   padding: 5px 0;
   border-radius: 5px;
+  background-color: black;
+  color: white;
 }
 
-section {
-  border-radius: 10px;
-}
 .resultsContainer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 .resultsContainer section {
-  width: 45%;
+  width: 85%;
   margin-bottom: 25px;
   border-radius: 10px;
+}
+.resultsContainer h3,
+.resultsContainer p {
+  text-transform: capitalize;
 }
 
 .infoContainer {
@@ -276,8 +319,36 @@ section {
       flex-wrap: wrap;
 }
 
+.toContainer,
+.fromContainer {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.toContainer section,
+.fromContainer section {
+  -webkit-box-shadow: 5px 5px black;
+          box-shadow: 5px 5px black;
+}
+
+select,
+option,
+h2,
+button,
+h1 {
+  font-family: "Chakra Petch", sans-serif;
+}
+
 .normal {
-  background-color: #A8A878;
+  background-color: rgb(168, 168, 120);
 }
 
 .fighting {
@@ -346,4 +417,39 @@ section {
 
 .fairy {
   background-color: #EE99AC;
+}
+
+.normal:empty,
+.fighting:empty,
+.flying:empty,
+.poison:empty,
+.ground:empty,
+.rock:empty,
+.bug:empty,
+.ghost:empty,
+.steel:empty,
+.fire:empty,
+.water:empty,
+.grass:empty,
+.electric:empty,
+.psychic:empty,
+.ice:empty,
+.dragon:empty,
+.dark:empty,
+.fairy:empty {
+  position: absolute;
+  left: -10000px;
+}
+
+.fighting h3,
+.fighting p,
+.poison h3,
+.poison p,
+.ghost h3,
+.ghost p,
+.dragon h3,
+.dragon p,
+.dark h3,
+.dark p {
+  color: white;
 }

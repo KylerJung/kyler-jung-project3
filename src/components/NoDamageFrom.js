@@ -1,7 +1,7 @@
 const NoDamageFrom = ({ allNoDmgFrom, userSelection }) => {
   return (
     <section className={userSelection}>
-      {allNoDmgFrom.length === 0 ? (<p></p>)
+      {allNoDmgFrom.length === 0 ? (<></>)
         :
         <>
           <h3>no damage from:</h3>

@@ -3,7 +3,7 @@ const DoubleDamageTo = ({ allDoubleDmgTo, userSelection }) => {
     <section className={userSelection}>
 
 
-      {allDoubleDmgTo.length === 0 ? (<p></p>)
+      {allDoubleDmgTo.length === 0 ? (<></>)
         :
         <>
           <h3>double damage to:</h3>

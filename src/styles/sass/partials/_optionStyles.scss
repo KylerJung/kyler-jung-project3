@@ -69,3 +69,38 @@
 .fairy {
   background-color: $fairy;
 }
+
+.normal:empty,
+.fighting:empty,
+.flying:empty,
+.poison:empty,
+.ground:empty,
+.rock:empty,
+.bug:empty,
+.ghost:empty,
+.steel:empty,
+.fire:empty,
+.water:empty,
+.grass:empty,
+.electric:empty,
+.psychic:empty,
+.ice:empty,
+.dragon:empty,
+.dark:empty,
+.fairy:empty {
+  position: absolute;
+  left: -10000px;
+}
+
+.fighting,
+.poison,
+.ghost,
+.dragon,
+.dark {
+  h3,
+  p {
+    color: white;
+  }
+}
+
+

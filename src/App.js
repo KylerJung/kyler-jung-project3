@@ -11,6 +11,7 @@ import NoDamageTo from './components/NoDamageTo';
 import PokeForm from './components/PokeForm';
 import Moves from './components/Moves';
 import Pokemon from './components/Pokemon';
+import Title from './components/Title';
 
 function App() {
 
@@ -30,9 +31,6 @@ function App() {
       url: `https://pokeapi.co/api/v2/type/${userSelection}/`,
       method: "GET",
       dataResponse: "json",
-      params: {
-        limit: 10
-      }
     }).then(response => {
       // console.log(response)
 
@@ -65,23 +63,35 @@ function App() {
   }
   // console.log(userSelection)
 
+  
+
+
 
   return (
     <div className="App">
-      <h1>Pokemon Type Battle Properties</h1>
+      <header>
+        <Title />
+        <PokeForm getTypes={getTypes}/>
+        <DisplayType userSelection={userSelection}/>
 
-      <PokeForm getTypes={getTypes}/>
-      <DisplayType userSelection={userSelection}/>
-      <div className="resultsContainer">
-        <DoubleDamageTo allDoubleDmgTo={allDoubleDmgTo} userSelection={userSelection}/>
-        <HalfDamageTo allHalfDmgTo={allHalfDmgTo} userSelection={userSelection}/>
-        <NoDamageTo allNoDmgTo={allNoDmgTo} userSelection={userSelection}/>
-        <DoubleDamageFrom allDoubleDmgFrom={allDoubleDmgFrom} userSelection={userSelection}/>
-        <HalfDamageFrom allHalfDmgFrom={allHalfDmgFrom} userSelection={userSelection}/>
-        <NoDamageFrom allNoDmgFrom={allNoDmgFrom} userSelection={userSelection}/>
-      </div>
+
+        <div className="resultsContainer">
+          <div className='toContainer'>
+            <DoubleDamageTo allDoubleDmgTo={allDoubleDmgTo} userSelection={userSelection}/>
+            <HalfDamageTo allHalfDmgTo={allHalfDmgTo} userSelection={userSelection}/>
+            <NoDamageTo allNoDmgTo={allNoDmgTo} userSelection={userSelection}/>
+          </div>
+          <div className='fromContainer'>
+            <DoubleDamageFrom allDoubleDmgFrom={allDoubleDmgFrom} userSelection={userSelection}/>
+            <HalfDamageFrom allHalfDmgFrom={allHalfDmgFrom} userSelection={userSelection}/>
+            <NoDamageFrom allNoDmgFrom={allNoDmgFrom} userSelection={userSelection}/>
+          </div>
+        </div>
+      </header>
+      <div className="extraInfoContainer">
       <Pokemon pokemonType={pokemonType} userSelection={userSelection}/>
       <Moves moveType={moveType} userSelection={userSelection}/>
+      </div>
       
     </div>
   );

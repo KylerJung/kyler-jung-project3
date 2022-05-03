@@ -3,7 +3,7 @@ const HalfDamageTo = ({allHalfDmgTo, userSelection}) => {
     <section className={userSelection}>
 
 
-      {allHalfDmgTo.length === 0 ? (<p></p>) 
+      {allHalfDmgTo.length === 0 ? (<></>) 
       :
       <>
           <h3>half damage to:</h3>

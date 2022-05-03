@@ -2,7 +2,7 @@ const DoubleDamageFrom = ({ allDoubleDmgFrom, userSelection }) => {
   return (
     <section className={userSelection}>
 
-      {allDoubleDmgFrom.length === 0 ? (<p></p>)
+      {allDoubleDmgFrom.length === 0 ? (<></>)
         :
         <>
           

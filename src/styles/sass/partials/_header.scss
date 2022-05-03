@@ -1,14 +1,25 @@
+header {
+  height: 100vh;
+}
+
 h1 {
   padding-top: 50px;
   margin-top: 0;
+  font-size: 3rem;
+  
+  img {
+    width: 300px;
+    height: auto;
+  }
 }
 
 h2 {
-  padding-bottom: 25px;
+  padding: 25px;
+  text-transform: capitalize;
 }
 
 form {
-  padding: 25px;
+  padding: 50px;
 
   select {
     margin-right: 10px;
@@ -23,31 +34,28 @@ form {
   select,
   button {
     border: none;
-    width: 200px;
+    width: 300px;
+    height: 50px;
     padding: 5px 0;
     border-radius: 5px;
-  }
-}
-
-section {
-  border-radius: 10px;
-
-
-  div {
-    // width: 50%;
+    background-color: black;
+    color: white;
   }
 }
 
 .resultsContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 
   section {
-    width: 45%;
+    width: 85%;
     margin-bottom: 25px;
     border-radius: 10px;
-    // this is an issue (leaves empty blocks when no info)
+  }
+
+  h3,
+  p {
+    text-transform: capitalize;
   }
 }
 
@@ -56,6 +64,30 @@ section {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
+
+.toContainer,
+.fromContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  section {
+    box-shadow: 5px 5px black;
+  }
+}
+
+select,
+option,
+h2,
+button,
+h1 {
+  font-family: "Chakra Petch", sans-serif;
+}
+
+
+
+
 
 
 
