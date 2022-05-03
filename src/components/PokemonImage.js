@@ -18,6 +18,7 @@ const PokemonImage = ({pokemonType}) => {
     }).then(response => {
       const pokemonImage = (response.data.sprites.other.home.front_default)
       setPokeImg(pokemonImage)
+
     })
 
   }, [pokeNameArray[0]])
@@ -26,7 +27,7 @@ const PokemonImage = ({pokemonType}) => {
     <div className="imgContainer" >
       {pokemonType.length === 0 ? (<></>) 
       : 
-      (<img src={pokeImg}></img>)
+      (<img src={pokeImg} alt={`photo of ${pokeNameArray[0]}`}></img>)
       }
     </div> 
   )
