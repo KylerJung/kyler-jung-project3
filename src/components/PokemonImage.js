@@ -6,13 +6,15 @@ const PokemonImage = ({pokemonType}) => {
 
   const [pokeImg, setPokeImg] = useState()
 
-  let pokeNameArray = slicedPokemonType.map((e) => {
+  const pokeNameArray = slicedPokemonType.map((e) => {
     return (e.pokemon.name)
   })
 
+  const pokeNameArrayOne = pokeNameArray[0]
+
   useEffect(() => {
     axios({
-      url: `https://pokeapi.co/api/v2/pokemon/${pokeNameArray[0]}`,
+      url: `https://pokeapi.co/api/v2/pokemon/${pokeNameArrayOne}`,
       method: "GET",
       dataResponse: "json",
     }).then(response => {
@@ -21,13 +23,13 @@ const PokemonImage = ({pokemonType}) => {
 
     })
 
-  }, [pokeNameArray[0]])
+  }, [pokeNameArrayOne])
 
   return (
     <div className="imgContainer" >
       {pokemonType.length === 0 ? (<></>) 
       : 
-      (<img src={pokeImg} alt={`${pokeNameArray[0]}`}></img>)
+      (<img src={pokeImg} alt={`${pokeNameArrayOne}`}></img>)
       }
     </div> 
   )
