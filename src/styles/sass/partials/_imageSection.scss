@@ -1,0 +1,26 @@
+.imgContainer {
+  width: 85%;
+  margin: 0 auto;
+
+  img {
+    width: 100%;
+  }
+}
+
+#pokemonSection {
+  width: 85%;
+  margin: 0 auto;
+
+}
+
+.flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.pokeContainer {
+  width: 50%;
+
+}

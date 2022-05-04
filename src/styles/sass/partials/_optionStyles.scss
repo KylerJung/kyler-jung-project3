@@ -1,0 +1,106 @@
+.normal {
+  background-color: $normal;
+}
+
+.fighting {
+  background-color: $fighting;
+}
+
+.flying {
+  background-color: $flying;
+}
+
+.poison {
+  background-color: $poison;
+}
+
+.ground {
+  background-color: $ground;
+}
+
+.rock {
+  background-color: $rock;
+}
+
+.bug {
+  background-color: $bug;
+}
+
+.ghost {
+  background-color: $ghost;
+}
+
+.steel  {
+  background-color: $steel;
+}
+
+.fire {
+  background-color: $fire;
+}
+
+.water {
+  background-color: $water;
+}
+
+.grass {
+  background-color: $grass;
+}
+
+.electric {
+  background-color: $electric;
+}
+
+.psychic {
+  background-color: $psychic;
+}
+
+.ice {
+  background-color: $ice;
+}
+
+.dragon {
+  background-color: $dragon;
+}
+
+.dark {
+  background-color: $dark;
+}
+
+.fairy {
+  background-color: $fairy;
+}
+
+.normal:empty,
+.fighting:empty,
+.flying:empty,
+.poison:empty,
+.ground:empty,
+.rock:empty,
+.bug:empty,
+.ghost:empty,
+.steel:empty,
+.fire:empty,
+.water:empty,
+.grass:empty,
+.electric:empty,
+.psychic:empty,
+.ice:empty,
+.dragon:empty,
+.dark:empty,
+.fairy:empty {
+  position: absolute;
+  left: -10000px;
+}
+
+.fighting,
+.poison,
+.ghost,
+.dragon,
+.dark {
+  h3,
+  p,
+  a {
+    color: white;
+  }
+}
+

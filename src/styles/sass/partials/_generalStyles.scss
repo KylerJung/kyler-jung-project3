@@ -1,0 +1,54 @@
+body {
+  background-color: linen;
+}
+
+.wrapper {
+  text-align: center;
+  max-width: 1280px;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.moveContainer {
+  p {
+    padding: 0 10px;
+  }
+}
+
+.extraInfoContainer  {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  section {
+    border-radius: 10px;
+    margin-bottom: 25px;
+    width: 92.5%;
+    box-shadow: 5px 5px black;
+
+    h3,
+    p {
+      text-transform: capitalize;
+    }
+  }
+}
+
+footer {
+  margin-top: 25px;
+  padding: 25px 0;
+
+  a {
+    color: black;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+button:hover,
+button:focus {
+  background-color: white;
+  color: black;
+  transition: 0.5s;
+}
